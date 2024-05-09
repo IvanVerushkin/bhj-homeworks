@@ -2,13 +2,13 @@ let cookie = document.querySelector(".clicker img");
 let clicker__counter = document.getElementById("clicker__counter");
 
 cookie.addEventListener('click', () => {
-    if (document.querySelector(".clicker img").width !== 220) {
-        document.querySelector(".clicker img").width = 220
-        document.querySelector(".clicker img").height = 180
+    if (cookie.width !== 220) {
+        cookie.width = 220
+        cookie.height = 180
         clicker__counter.textContent++
     } else {
-        document.querySelector(".clicker img").width = 200
-        document.querySelector(".clicker img").height = 150
+        cookie.width = 200
+        cookie.height = 150
         clicker__counter.textContent++
     };
 });
