@@ -8,6 +8,8 @@ class Game {
     this.reset();
 
     this.registerEvents();
+    
+
   }
 
   reset() {
@@ -25,6 +27,12 @@ class Game {
       При неправильном вводе символа - this.fail();
       DOM-элемент текущего символа находится в свойстве this.currentSymbol.
      */
+      
+      document.addEventListener('keyup', (e) => {
+      if (e.key === 'Control' || e.key === 'Alt' || e.key === 'Shift') return;
+        e.key === this.currentSymbol.innerHTML ? this.success() : this.fail();
+      });
+      
   }
 
   success() {
@@ -42,6 +50,7 @@ class Game {
       this.reset();
     }
     this.setNewWord();
+    console.log(this.currentSymbol)
   }
 
   fail() {
@@ -91,4 +100,3 @@ class Game {
 }
 
 new Game(document.getElementById('game'))
-
