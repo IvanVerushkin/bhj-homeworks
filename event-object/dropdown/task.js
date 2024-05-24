@@ -1,18 +1,17 @@
 const menu = document.querySelector('.dropdown__list');
 
-function menu_action () {
+function menuAction () {
     menu.classList.toggle('dropdown__list_active') 
 };
 
 const value = document.querySelector('.dropdown__value');
-value.addEventListener('click', menu_action);
-const take_item = Array.from(document.querySelectorAll('.dropdown__item'));
+value.addEventListener('click', menuAction);
+const takeItem = Array.from(document.querySelectorAll('.dropdown__item'));
 
-take_item.forEach((elem, index) => {
+takeItem.forEach((elem, index) => {
     elem.onclick = () => {
-        menu_action()
-        value.textContent = take_item[index].textContent
-        console.log(index)
+        menuAction()
+        value.textContent = takeItem[index].textContent
         return false
     };
 });
